@@ -1,0 +1,149 @@
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+
+$grey-500: hsl(234, 12%, 34%);
+$grey-400: hsl(212, 6%, 44%);
+$grey-400-low-op: hsla(212, 6%, 44%, 0.2);
+$white: hsl(0, 0%, 100%);
+$bg-white: rgba(250, 250, 250, 255);
+
+@use "sass:math";
+
+@function rem($pixels, $context: 16) {
+    @return (math.div($pixels, $context))*1rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bg-white;
+    font-size: rem(15);
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    padding: rem(60) rem(30) rem(20);
+    margin: 0 auto;
+}
+
+footer {
+    padding: 1rem;
+
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+.heading {
+    padding: 0 rem(5);
+
+    h1 {
+        font-weight: 200;
+        color: $grey-400;
+        font-size: 1.55rem;
+    }
+
+    h2 {
+        font-weight: 600;
+        color: $grey-500;
+        font-size: 1.45rem;
+        line-height: 0.92;
+        letter-spacing: rem(1);
+        padding-bottom: rem(17);
+    }
+
+    p {
+        font-size: rem(15);
+        line-height: 1.4;
+        color: $grey-500;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.grid {
+    padding-top: rem(55);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: rem(30);
+
+    .card {
+        width: 100%;
+        height: rem(250);
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow:
+            0 0 2px $grey-400-low-op,
+            0 20px 20px $grey-400-low-op;
+        padding: rem(30);
+
+        img {
+            width: 10%;
+        }
+    }
+
+    .supervisor {
+        grid-area: 1 / 1 / 2 / 1;
+    }
+
+    .team {
+        grid-area: 2 / 1 / 3 / 1;
+    }
+
+    .karma {
+        grid-area: 3 / 1 / 4 / 1;
+    }
+
+    .calculator {
+        grid-area: 4 / 1 / 5 / 1;
+    }
+
+
+}
+
+
+@media only screen and (min-width:376px) {
+    main {
+        padding: rem(100) rem(30);
+        max-width: rem(1120);
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+        .supervisor {
+            grid-area: 2 / 1 / 4 / 2;
+        }
+
+        .team {
+            grid-area: 1 / 2 / 3 / 3;
+        }
+
+        .karma {
+            grid-area: 3 / 2 / 5 / 3;
+        }
+
+        .calculator {
+            grid-area: 2 / 3 / 4 / 4;
+        }
+
+
+    }
+}
