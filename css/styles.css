@@ -103,7 +103,7 @@ footer .attribution a {
 .grid .calculator {
   grid-area: 4/1/5/1;
 }
-.grid .supervisor:before {
+.grid .supervisor::before {
   content: "";
   display: block;
   width: 100%;
@@ -113,7 +113,7 @@ footer .attribution a {
   left: 0;
   top: 0;
 }
-.grid .team:before {
+.grid .team::before {
   content: "";
   display: block;
   width: 100%;
@@ -123,7 +123,7 @@ footer .attribution a {
   left: 0;
   top: 0;
 }
-.grid .karma:before {
+.grid .karma::before {
   content: "";
   display: block;
   width: 100%;
@@ -133,7 +133,7 @@ footer .attribution a {
   left: 0;
   top: 0;
 }
-.grid .calculator:before {
+.grid .calculator::before {
   content: "";
   display: block;
   width: 100%;

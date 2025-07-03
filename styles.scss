@@ -149,19 +149,19 @@ footer {
         grid-area: 4 / 1 / 5 / 1;
     }
 
-    .supervisor:before {
+    .supervisor::before {
         @include color-bar($cyan);
     }
 
-    .team:before {
+    .team::before {
         @include color-bar($red);
     }
 
-    .karma:before {
+    .karma::before {
         @include color-bar($orange);
     }
 
-    .calculator:before {
+    .calculator::before {
         @include color-bar($blue);
     }
 
